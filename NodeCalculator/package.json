@@ -4,7 +4,8 @@
   "description": "Calculator demo using electron-cgi",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --linux snap"
   },
   "repository": "https://github.com/fairking/electron-cgi-calculator-demo",
   "keywords": [
@@ -17,7 +18,8 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^10.1.2"
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.1"
   },
   "dependencies": {
     "electron-cgi": "1.0.6"
