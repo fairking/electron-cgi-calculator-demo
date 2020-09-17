@@ -11,12 +11,12 @@ const { ConnectionBuilder } = require('electron-cgi');
 let _connection = null;
 
 function setupConnectionToRestartOnConnectionLost() {
-    _connection = new ConnectionBuilder().connectTo('dotnet', 'run', '--project', 'DotNetCalculator').build();
+    _connection = new ConnectionBuilder().connectTo('dotnet', 'run', '--project', '../DotNetCalculator').build();
     _connection.onDisconnect = () => {
         alert('Connection lost, restarting...');
         setupConnectionToRestartOnConnectionLost();
     };
-}
+};
 
 setupConnectionToRestartOnConnectionLost();
 
@@ -25,15 +25,15 @@ function reset() {
     _num2 = null;
     _selectedOperation = null;
     updateDisplay();
-}
+};
 
 function setDisplayOperation(operation) {
     document.getElementById('operation').innerText = operation || '';
-}
+};
 
 function setDisplay(number) {
     document.getElementById('result').innerText = number;
-}
+};
 
 function updateDisplay() {
     setDisplayOperation(_selectedOperation);
@@ -42,7 +42,7 @@ function updateDisplay() {
     } else {
         setDisplay(_num2);
     }
-}
+};
 
 document.getElementById('calculator').addEventListener('click', function (e) {
     const elementClicked = e.target;
@@ -83,34 +83,34 @@ document.getElementById('calculator').addEventListener('click', function (e) {
 
 
 function performSum() {
-    _connection.send('sum', { num1: _num1, num2: _num2 }, result => {
+    _connection.send('sum', { num1: _num1, num2: _num2 }, (error, result) => {
         reset();
         _num1 = result;
         updateDisplay();
     });
-}
+};
 
 function performSubtraction() {
-    _connection.send('subtraction', { num1: _num1, num2: _num2 }, result => {
+    _connection.send('subtraction', { num1: _num1, num2: _num2 }, (error, result) => {
         reset();
         _num1 = result;
         updateDisplay();
     });
-}
+};
 
 function performMultiplication() {
-    _connection.send('multiplication', { num1: _num1, num2: _num2 }, result => {
+    _connection.send('multiplication', { num1: _num1, num2: _num2 }, (error, result) => {
         reset();
         _num1 = result;
         updateDisplay();
     });
-}
+};
 
 
 function performDivision() {
-    _connection.send('division', { num1: _num1, num2: _num2 }, result => {
+    _connection.send('division', { num1: _num1, num2: _num2 }, (error, result) => {
         reset();
         _num1 = result;
         updateDisplay();
     });
-}
+};
