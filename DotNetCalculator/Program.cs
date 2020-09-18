@@ -9,6 +9,7 @@ namespace DotNetCalculator
         public double Num1 { get; set; }
         public double Num2 { get; set; }
     }
+    
     class Program
     {
         static void Main(string[] args)

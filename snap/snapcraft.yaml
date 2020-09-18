@@ -1,0 +1,57 @@
+name: electron-cgi-calculator-demo
+version: '0.1'
+summary: Electron CGI Calculator Demo
+description: |
+  Simple Calculator using Electron CGI
+base: core18
+confinement: strict
+grade: devel
+
+apps:
+  electron-cgi-calculator-demo:
+    command: desktop-launch "$SNAP/electron-cgi-calculator-demo/node-calculator" "--no-sandbox"
+    plugs:
+    - browser-support
+    - network
+    - network-bind
+    - opengl
+    - pulseaudio
+    - x11
+
+parts:
+  dot-net-calculator:
+    plugin: dotnet
+    source: ./DotNetCalculator
+    after: [node-calculator]
+    build-snaps:
+    - dotnet-sdk
+    stage-snaps:
+    - dotnet-sdk
+
+  node-calculator:
+    plugin: nodejs
+    nodejs-version: 12.18.4
+    source: ./NodeCalculator
+    override-build: |
+        case $SNAPCRAFT_ARCH_TRIPLET in
+          "i386-linux-gnu") ARCH="ia32";;
+          "x86_64-linux-gnu") ARCH="x64";;
+          "arm-linux-gnueabihf") ARCH="armv7l";;
+          "aarch64-linux-gnu") ARCH="arm64";;
+          *) echo "ERROR: electron does not support the '$SNAPCRAFT_ARCH_TRIPLET' architecture" && exit 1;;
+        esac
+        npm install electron electron-packager &&
+        ./NodeCalculator/node_modules/.bin/electron-packager . --overwrite --platform=linux --arch=$ARCH --output=release-build --prune=true
+        cp -v -R ./node-calculator-linux-$ARCH $SNAPCRAFT_PART_INSTALL/node-calculator
+    build-snaps:
+    - node/12/stable
+    build-packages:
+    - npm
+    - unzip
+    stage-packages:
+    - libasound2
+    - libgconf-2-4
+    - libnss3
+    - libx11-xcb1
+    - libxss1
+    - libxtst6
