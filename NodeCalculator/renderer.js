@@ -11,11 +11,19 @@ const { ConnectionBuilder } = require('electron-cgi');
 let _connection = null;
 
 function setupConnectionToRestartOnConnectionLost() {
-    _connection = new ConnectionBuilder().connectTo('../DotNetCalculator/bin/Debug/netcoreapp3.1/DotNetCalculator').build();
-    _connection.onDisconnect = () => {
-        alert('Connection lost, restarting...');
-        setTimeout(function(){ setupConnectionToRestartOnConnectionLost(); }, 3000);
-    };
+    try {
+        debugger;
+        _connection = new ConnectionBuilder().connectTo('./DotNetCalculator/DotNetCalculator.exe').build();
+        _connection.onDisconnect = () => {
+            setTimeout(function () {
+                alert('Connection lost, restarting...');
+                setupConnectionToRestartOnConnectionLost();
+            }, 3000);
+        };
+    } catch
+    {
+
+    }
 };
 
 setupConnectionToRestartOnConnectionLost();

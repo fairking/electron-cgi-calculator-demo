@@ -4,7 +4,14 @@ Demo project for ElectronCGI using Electron for the GUI and .Net for the operati
 
 For more information about ElectronCGI read [this](https://www.blinkingcaret.com/2019/11/27/electroncgi-a-solution-to-cross-platform-guis-for-net-core/).
 
-To run the project go to the app folder `cd NodeCalculator` and then run `npm start`.
+**To run the project** go to the app folder `cd NodeCalculator` and then run `npm start`.
+
+**To create a snap**:
+1. Go to `cd DotNetCalculator` folder
+2. Run 'dotnet build'
+3. Go to `cd NodeCalculator`
+4. Run `npm run dist`
+5. The snap is available in `dist` folder
 
 Help 
 https://gist.github.com/voor/8215016d722da5df0caf629469fe7e80

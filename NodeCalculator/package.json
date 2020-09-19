@@ -9,14 +9,32 @@
   },
   "repository": "https://github.com/fairking/electron-cgi-calculator-demo",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
+    "electron",
+    "cgi",
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Github",
   "license": "CC0-1.0",
+  "build": {
+    "appId": "com.electron.${name}",
+    "productName": "Calculator Demo",
+    "snap": {
+      "category": "Other"
+    },
+    "extraResources": [
+      {
+        "from": "../DotNetCalculator/bin/Debug/netcoreapp3.1/",
+        "to": "./DotNetCalculator"
+      }
+    ],
+    "extraFiles": [
+      {
+        "from": "../DotNetCalculator/bin/Debug/netcoreapp3.1/",
+        "to": "./DotNetCalculator"
+      }
+    ]
+  },
   "devDependencies": {
     "electron": "^10.1.2",
     "electron-builder": "^22.8.1"
