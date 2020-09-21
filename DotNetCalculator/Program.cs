@@ -14,6 +14,8 @@ namespace DotNetCalculator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Starting calculator-demo app...");
+
             var connection = new ConnectionBuilder().WithLogging(minimumLogLevel: LogLevel.Trace).Build();
 
             connection.On<dynamic, double>("sum", numbers =>

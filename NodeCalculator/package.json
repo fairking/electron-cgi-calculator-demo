@@ -24,7 +24,7 @@
     },
     "extraFiles": [
       {
-        "from": "../DotNetCalculator/bin/Debug/netcoreapp3.1/",
+        "from": "../DotNetCalculator/bin/Release/netcoreapp3.1/publish/",
         "to": "./DotNetCalculator"
       }
     ]
