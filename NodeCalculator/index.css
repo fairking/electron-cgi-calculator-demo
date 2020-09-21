@@ -32,7 +32,7 @@ body {
 #calculator .result-container #result {
     position: absolute;
     right: 5px;
-    font-size: 8vw;
+    font-size: 8vh;
     font-weight: bold;
 }
 
@@ -40,7 +40,7 @@ body {
     position: absolute;
     top: 2px;
     left: 2px;
-    font-size: 8vw;
+    font-size: 8vh;
     font-weight: bold;
 }
 

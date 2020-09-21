@@ -7,23 +7,23 @@ let _num2 = null;
 let _selectedOperation = null;
 
 const { ConnectionBuilder } = require('electron-cgi');
+const { remote } = require('electron');
+const path = require('path')
 
 let _connection = null;
 
 function setupConnectionToRestartOnConnectionLost() {
-    try {
-        debugger;
-        _connection = new ConnectionBuilder().connectTo('./DotNetCalculator/DotNetCalculator.exe').build();
-        _connection.onDisconnect = () => {
-            setTimeout(function () {
-                alert('Connection lost, restarting...');
-                setupConnectionToRestartOnConnectionLost();
-            }, 3000);
-        };
-    } catch
-    {
-
-    }
+    debugger;
+    let e_path = remote.app.getAppPath();
+    e_path = e_path.replace("/resources/app.asar", "");
+    let a_path = path.join(e_path, '/DotNetCalculator/DotNetCalculator.exe')
+    _connection = new ConnectionBuilder().connectTo(a_path).build();
+    _connection.onDisconnect = (err) => {
+        setTimeout(function () {
+            alert('Connection lost, restarting...');
+            setupConnectionToRestartOnConnectionLost();
+        }, 3000);
+    };
 };
 
 setupConnectionToRestartOnConnectionLost();

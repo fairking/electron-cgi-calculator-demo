@@ -22,12 +22,6 @@
     "snap": {
       "category": "Other"
     },
-    "extraResources": [
-      {
-        "from": "../DotNetCalculator/bin/Debug/netcoreapp3.1/",
-        "to": "./DotNetCalculator"
-      }
-    ],
     "extraFiles": [
       {
         "from": "../DotNetCalculator/bin/Debug/netcoreapp3.1/",
