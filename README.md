@@ -15,7 +15,13 @@ For more information about ElectronCGI read [this](https://www.blinkingcaret.com
 6. To install the snap use `snap install --dangerous dist/calculator-demo_1.0.0_amd64.snap`
 
 Help 
+
+https://www.electron.build/configuration/configuration
+
 https://gist.github.com/voor/8215016d722da5df0caf629469fe7e80
+
 https://help.gnome.org/admin/system-admin-guide/stable/lockdown-single-app-mode.html.en
+
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/desktop_migration_and_administration_guide/single-application-ode
+
 https://github.com/VoidVolker/kiosk/blob/master/linux_kiosk_init.sh
