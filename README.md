@@ -8,7 +8,7 @@ For more information about ElectronCGI read [this](https://www.blinkingcaret.com
 
 **To create a snap**:
 1. Go to `cd DotNetCalculator` folder
-2. Run 'dotnet publish --configuration release --runtime linux-x64 --self-contained false --output bin\Release\netcoreapp3.1\publish\'
+2. Run 'dotnet publish --configuration release --runtime linux-x64 --self-contained false --output bin/Release/netcoreapp3.1/publish/'
 3. Go to `cd NodeCalculator`
 4. Run `npm run dist`
 5. The snap is available in `dist` folder
