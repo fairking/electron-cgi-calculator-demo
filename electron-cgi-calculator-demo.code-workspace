@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.vscode/**": true,
+			"**/dist/**": true,
+			"**/node_modules/**": true
+		},
+		"files.watcherExclude": {
+			"**/.vscode/**": true,
+			"**/dist/**": true
+		},
+		"search.exclude": {
+			"**/.vscode/**": true,
+			"**/dist/**": true,
+			"**/node_modules/**": true
+		}
+	}
+}

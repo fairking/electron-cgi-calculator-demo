@@ -12,7 +12,7 @@ For more information about ElectronCGI read [this](https://www.blinkingcaret.com
 3. Go to `cd NodeCalculator`
 4. Run `npm run dist`
 5. The snap is available in `dist` folder
-6. To install the snap use `snap install --dangerous dist/calculator-demo_1.0.0_amd64.snap`
+6. To install the snap use `sudo yum localinstall dist/calculator-demo_1.0.0_amd64.snap`
 
 Help 
 
