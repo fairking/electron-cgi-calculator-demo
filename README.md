@@ -25,3 +25,5 @@ https://help.gnome.org/admin/system-admin-guide/stable/lockdown-single-app-mode.
 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/desktop_migration_and_administration_guide/single-application-ode
 
 https://github.com/VoidVolker/kiosk/blob/master/linux_kiosk_init.sh
+
+https://gist.github.com/anonymous/5bba6c9b6425a42b4ea1
