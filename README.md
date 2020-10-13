@@ -6,15 +6,23 @@ For more information about ElectronCGI read [this](https://www.blinkingcaret.com
 
 **To run the project** go to the app folder `cd NodeCalculator` and then run `npm start` (You might need to change the path to the DotNetCalculator).
 
-**To create a snap**:
+**To create a rpm for Linux**:
 1. Go to `cd DotNetCalculator` folder
-2. Run 'dotnet publish --configuration release --runtime linux-x64 --self-contained false --output bin/Release/netcoreapp3.1/publish/'
+2. Run for linux `dotnet publish --configuration release --runtime linux-x64 --self-contained false --output bin/Release/netcoreapp3.1/publish/`
 3. Go to `cd NodeCalculator`
-4. Run `npm run dist`
-5. The rpm package will be available in `dist` folder
-6. To install the rpm use `sudo yum install {path-to-rpm-file}` or `sudo dnf install {path-to-rpm-file}` or `sudo rpm –i {path-to-rpm-file}`
+4. Run `npm run dist-linux`
+5. The `.rpm` package will be available in `dist` folder
+6. To install the rpm on linux use `sudo yum install {path-to-rpm-file}` or `sudo dnf install {path-to-rpm-file}` or `sudo rpm –i {path-to-rpm-file}`
 
-Help 
+**To create a setup file for Windows**:
+1. Go to `cd DotNetCalculator` folder
+2. Run for windows `dotnet publish --configuration release --runtime win-x64 --self-contained false --output bin/Release/netcoreapp3.1/publish/`
+3. Go to `cd NodeCalculator`
+4. Run `npm run dist-win`
+5. The exe installation file will be available in `dist` folder
+6. To install just run `/dist/Calculator Demo Setup 1.0.0.exe` file.
+
+Some ideas how to create a kiosk app on linux:
 
 https://www.electron.build/configuration/configuration
 

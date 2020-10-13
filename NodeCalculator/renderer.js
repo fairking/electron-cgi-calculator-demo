@@ -13,11 +13,8 @@ const path = require('path')
 let _connection = null;
 
 function setupConnectionToRestartOnConnectionLost() {
-    debugger;
-    let e_path = remote.app.getAppPath();
-    e_path = e_path.replace("/resources/app.asar", "");
-    let a_path = path.join(e_path, '/DotNetCalculator/DotNetCalculator')
-    _connection = new ConnectionBuilder().connectTo(a_path).build();
+    const cgi_path = path.join(remote.app.getAppPath(), '/../../DotNetCalculator/DotNetCalculator')
+    _connection = new ConnectionBuilder().connectTo(cgi_path).build();
     _connection.onDisconnect = (err) => {
         setTimeout(function () {
             alert('Connection lost, restarting...');

@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --linux rpm"
+    "dist-linux": "electron-builder --linux rpm",
+    "dist-win": "electron-builder --windows"
   },
   "repository": "https://github.com/fairking/electron-cgi-calculator-demo",
   "keywords": [
@@ -17,8 +18,12 @@
   "author": "Github <support@github.com>",
   "license": "CC0-1.0",
   "build": {
-    "appId": "com.electron.${name}",
+    "appId": "com.electron.calculator-demo",
     "productName": "Calculator Demo",
+    "copyright": "Copyright © year ${author}",
+    "win": {
+      "target": "nsis"
+    },
     "rpm": {
       "category": "Other"
     },
